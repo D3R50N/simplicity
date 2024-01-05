@@ -19,7 +19,11 @@ export default class JokesController {
     },
   ];
   public async index(ctx: HttpContextContract) {
-    return this.jokes;
+
+    return {
+      jokes: this.jokes,
+      route :  ctx.route
+    };
   }
 
   public async show(ctx: HttpContextContract) {
